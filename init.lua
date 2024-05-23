@@ -255,7 +255,7 @@ require('lazy').setup({
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
-
+  { 'sindrets/diffview.nvim', opts = {} },
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
@@ -581,7 +581,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -594,6 +594,7 @@ require('lazy').setup({
         -- tsserver = {},
         --
 
+        cmake = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -667,6 +668,7 @@ require('lazy').setup({
         }
       end,
       formatters_by_ft = {
+        cmake = { 'cmakelang' },
         cpp = { 'clang_format' },
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
