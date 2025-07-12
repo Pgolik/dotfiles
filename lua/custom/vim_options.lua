@@ -33,3 +33,4 @@ vim.opt.spelllang = { 'en_us' }
 vim.opt.spelloptions:append 'camel'
 vim.opt.spellcapcheck = '' -- disable checking for capital letters at the start of sentences
 vim.lsp.set_log_level 'debug'
+vim.g.gitblame_display_virtual_text = 0

@@ -581,7 +581,10 @@ require('lazy').setup({
       })
     end,
   },
-  -- require 'custom/plugins/tabby',
+  require 'custom/plugins/git-blame',
+  require 'custom/plugins/lualine',
+  require 'custom/plugins/tabby',
+  require 'custom/plugins/tiny-inline-diagnostics',
   {
     'christoomey/vim-tmux-navigator',
     cmd = {
@@ -599,23 +602,6 @@ require('lazy').setup({
     opts = {},
   },
   'mg979/vim-visual-multi',
-  {
-    'f-person/git-blame.nvim',
-    -- load the plugin at startup
-    event = 'VeryLazy',
-    -- Because of the keys part, you will be lazy loading this plugin.
-    -- The plugin wil only load once one of the keys is used.
-    -- If you want to load the plugin at startup, add something like event = "VeryLazy",
-    -- or lazy = false. One of both options will work.
-    opts = {
-      -- your configuration comes here
-      -- for example
-      enabled = true, -- if you want to enable the plugin
-      message_template = ' <summary> • <date> • <author> • <<sha>>', -- template for the blame message, check the Message template section for more options
-      date_format = '%m-%d-%Y %H:%M:%S', -- template for the date, check Date format section for more options
-      virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
-    },
-  },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -1030,7 +1016,6 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        vue_ls = {},
         ts_ls = {
           init_options = {
             plugins = {
@@ -1048,16 +1033,16 @@ require('lazy').setup({
           cmd = { 'bash-language-server', 'start' },
           shellcheckPath = '$HOME/.local/share/nvim/mason/bin/shellcheck',
         },
-        texlab = {
-          settings = {
-            texlab = {
-              build = {
-                args = { '-X', 'compile', '%f', '--synctex', '--keep-logs', '--keep-intermediates' },
-                executable = 'tectonic',
-              },
-            },
-          },
-        },
+        -- texlab = {
+        --   settings = {
+        --     texlab = {
+        --       build = {
+        --         args = { '-X', 'compile', '%f', '--synctex', '--keep-logs', '--keep-intermediates' },
+        --         executable = 'tectonic',
+        --       },
+        --     },
+        --   },
+        -- },
         pyright = {},
         ruff = {
           settings = {
