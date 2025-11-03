@@ -1,0 +1,5 @@
+vim.keymap.set('n', '<leader>e', "<Cmd>Neotree position=float<CR>", { desc = 'Open Oil Floating window' })
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Telescope Find Files' })
+vim.keymap.set('n', '<leader>jl', require('telescope.builtin').jumplist, { desc = 'Telescope Jump List' })
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Telescope Files Grep' })
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Telescope Files Grep' })
