@@ -66,7 +66,7 @@ vim.pack.add{{
           -- }
           multilines = {
             -- Enable multiline diagnostic messages
-            enabled = true,
+            enabled = false,
 
             -- Always show messages on all lines for multiline diagnostics
             always_show = false,
