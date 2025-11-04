@@ -1,3 +1,4 @@
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Stop searching' })
 vim.keymap.set('n', '<leader>e', "<Cmd>Neotree position=float<CR>", { desc = 'Open Oil Floating window' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Telescope Find Files' })
 vim.keymap.set('n', '<leader>jl', require('telescope.builtin').jumplist, { desc = 'Telescope Jump List' })
