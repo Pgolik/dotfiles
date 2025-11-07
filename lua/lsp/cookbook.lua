@@ -1,1 +1,26 @@
-vim.lsp.enable('cookbook')
+vim.lsp.enable('codebook')
+vim.lsp.config['codebook'] = {
+	 filetypes = {
+    'c',
+    'cpp',
+    'css',
+    'gitcommit',
+    'go',
+    'haskell',
+    'html',
+    'java',
+    'javascript',
+    'javascriptreact',
+    'lua',
+    'markdown',
+    'php',
+    'python',
+    'ruby',
+    'rust',
+    'toml',
+    'text',
+    'typescript',
+    'typescriptreact',
+    'yaml',
+  },
+}

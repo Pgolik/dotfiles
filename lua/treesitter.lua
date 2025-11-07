@@ -1,11 +1,8 @@
-vim.pack.add({
-  { src ='https://github.com/nvim-treesitter/nvim-treesitter',
-  version = 'main' }
-})
+vim.pack.add({{ src ='https://github.com/nvim-treesitter/nvim-treesitter', version="master", name = 'tree-sitter'}})
 
-require("nvim-treesitter").setup {
+require("nvim-treesitter.configs").setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-  ensure_installed = { "c", "cpp", "bash", "python", "rust", "typescript", "jinja", "jinja_inline", "json",  "javascript", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+  ensure_installed = { "c", "cpp", "bash", "python", "rust", "typescript", "jinja", "jinja_inline", "json",  "javascript", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "vue" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -38,6 +35,6 @@ require("nvim-treesitter").setup {
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
   },
 }
