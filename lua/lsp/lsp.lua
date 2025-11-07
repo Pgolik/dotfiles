@@ -8,6 +8,7 @@ require('lsp/ts_ls')
 require('lsp/vue_ls')
 require('lsp/hover')
 require('lsp/pyright')
+require('lsp/ruff')
 
 
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -66,6 +67,10 @@ require('lsp/pyright')
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
+          if client and client.supports_method('textDocument/completion') then
+            client.server_capabilities.completionProvider.triggerCharacters = {32}
+            vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
+          end
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
             map('<leader>cf', function()
               vim.lsp.buf.format { bufnr = event.buf, id = event.data.client_id, timeout_ms = 1000 }
