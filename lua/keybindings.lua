@@ -1,8 +1,8 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Stop searching' })
-vim.keymap.set('n', '<leader>e', "<Cmd>Neotree position=float<CR>", { desc = 'Open Neotree' })
-vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'Telescope Find Files' })
-vim.keymap.set('n', '<leader>sl', require('telescope.builtin').jumplist, { desc = 'Telescope Jump List' })
-vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Telescope Files Grep' })
+vim.keymap.set('n', '<leader>e', "<Cmd>Neotree toggle<CR>", { desc = 'Open Neotree' })
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = 'Telescope Find Files' })
+vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = 'Telescope Jump List' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Telescope Files Grep' })
 
 -- Tmux jump between tmux and nvim with nvim keybindings
 vim.keymap.set('n', '<c-h>', '<cmd>TmuxNavigateLeft<cr>', { desc = 'Move to left pane in tumx' })

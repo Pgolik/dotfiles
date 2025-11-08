@@ -1,8 +1,18 @@
 vim.pack.add{
+	{ src = 'https://github.com/nvim-tree/nvim-web-devicons' },
 	{ src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
 	{ src = 'https://github.com/MunifTanjim/nui.nvim' },
-	{ src = 'https://github.com/nvim-tree/nvim-web-devicons' }
 }
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '',
+      [vim.diagnostic.severity.WARN] = '',
+      [vim.diagnostic.severity.INFO] = '',
+      [vim.diagnostic.severity.HINT] = '󰌵',
+    },
+  }
+})
 require("neo-tree").setup({
   close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
   popup_border_style = "NC", -- or "" to use 'winborder' on Neovim v0.11+
@@ -116,7 +126,7 @@ require("neo-tree").setup({
   -- see `:h neo-tree-custom-commands-global`
   commands = {},
   window = {
-    position = "left",
+    position = "float",
     width = 40,
     mapping_options = {
       noremap = true,
