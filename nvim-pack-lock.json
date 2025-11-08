@@ -1,5 +1,17 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "40380e7",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
+    "diffview.nvim": {
+      "rev": "4516612",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
+    "fidget.nvim": {
+      "rev": "e32b672",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
     "git-blame.nvim": {
       "rev": "54da042",
       "src": "https://github.com/f-person/git-blame.nvim"
@@ -37,6 +49,10 @@
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "telescope-just.nvim": {
+      "rev": "bcbe274",
+      "src": "https://codeberg.org/elfahor/telescope-just.nvim"
+    },
     "telescope.nvim": {
       "rev": "b4da76b",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
@@ -51,6 +67,24 @@
     "tokyonight.nvim": {
       "rev": "545d72c",
       "src": "https://github.com/folke/tokyonight.nvim"
+    },
+    "tree-sitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'master'"
+    },
+    "vim-tmux-navigator": {
+      "rev": "c45243d",
+      "src": "https://github.com/christoomey/vim-tmux-navigator"
+    },
+    "vim-visual-multi": {
+      "rev": "a6975e7",
+      "src": "https://github.com/mg979/vim-visual-multi",
+      "version": "'master'"
+    },
+    "which-key.nvim": {
+      "rev": "3aab214",
+      "src": "https://github.com/folke/which-key.nvim"
     }
   }
 }
