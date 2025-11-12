@@ -36,3 +36,4 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.signcolumn = "auto"
 vim.lsp.log.set_level 'error'
+vim.opt.completeopt = { "menuone", "noselect", "popup" }

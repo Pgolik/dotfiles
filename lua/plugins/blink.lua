@@ -1,5 +1,4 @@
-vim.pack.add{{ src = 'https://github.com/saghen/blink.cmp'} }
-
+vim.pack.add{{ src = 'https://github.com/saghen/blink.cmp'}, {src = 'https://github.com/Saghen/blink.compat'}, {src = 'https://github.com/hrsh7th/cmp-path' }}
 require('blink.cmp').setup{
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
     -- 'super-tab' for mappings similar to vscode (tab to accept)
@@ -13,7 +12,7 @@ require('blink.cmp').setup{
     -- C-k: Toggle signature help (if signature.enabled = true)
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
-    keymap = { preset = 'default' },
+    keymap = { preset = 'enter' },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -22,11 +21,20 @@ require('blink.cmp').setup{
     },
 
     -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = false } },
+    completion = { documentation = { auto_show = true } },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
+      providers = {
+        lsp = {
+          enabled = true,
+        },
+		path = {
+			name = 'path',
+			module = 'blink.compat.source'
+		}
+      },
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
 
@@ -37,3 +45,7 @@ require('blink.cmp').setup{
     -- See the fuzzy documentation for more information
     fuzzy = { implementation = "lua" }
   }
+
+
+
+

@@ -67,10 +67,11 @@ require('lsp/neocmakelsp')
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.supports_method('textDocument/completion') then
-            vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
-          end
+          -- local client = vim.lsp.get_client_by_id(event.data.client_id)
+          -- if client and client.supports_method('textDocument/completion') then
+          --   vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
+          --   vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
+          -- end
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
             map('<leader>cf', function()
               vim.lsp.buf.format { bufnr = event.buf, id = event.data.client_id, timeout_ms = 1000 }
@@ -111,4 +112,6 @@ require('lsp/neocmakelsp')
           end
         end,
       })
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
