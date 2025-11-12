@@ -2,7 +2,7 @@ vim.pack.add{
   { src = 'https://github.com/neovim/nvim-lspconfig' },
 }
 require('lsp/clangd')
-require('lsp/cookbook')
+require('lsp/codebook')
 require('lsp/bashlsp')
 require('lsp/ts_ls')
 require('lsp/vue_ls')
@@ -10,6 +10,7 @@ require('lsp/hover')
 require('lsp/pyright')
 require('lsp/ruff')
 require('lsp/neocmakelsp')
+require('lsp/lua_ls')
 
 
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -67,18 +68,18 @@ require('lsp/neocmakelsp')
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          -- local client = vim.lsp.get_client_by_id(event.data.client_id)
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- if client and client.supports_method('textDocument/completion') then
           --   vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
           --   vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
           -- end
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_formatting) then
+          if client and client.supports_method('textDocument/formatting') then
             map('<leader>cf', function()
               vim.lsp.buf.format { bufnr = event.buf, id = event.data.client_id, timeout_ms = 1000 }
             end, '[C]code [F]ormat', { 'n', 'x' })
           end
 
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+          if client and client.supports_method('textDocument/documentHighlight') then
             local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
@@ -105,7 +106,7 @@ require('lsp/neocmakelsp')
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+          if client and client.supports_method('textDocument/inlayHint') then
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')

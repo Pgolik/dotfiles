@@ -1,6 +1,6 @@
 require('plugins/devicons')
-vim.pack.add{{
-	src = 'https://github.com/nvim-lualine/lualine.nvim'}
+vim.pack.add { {
+	src = 'https://github.com/nvim-lualine/lualine.nvim' }
 }
 require('plugins/git-blame')
 local git_blame = require 'gitblame'
