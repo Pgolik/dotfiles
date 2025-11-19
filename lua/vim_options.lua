@@ -3,8 +3,10 @@ vim.g.maplocalleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.have_nerd_font = true
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
+vim.opt.smarttab = true
 vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 vim.opt.encoding = "UTF-8"
 vim.opt.wrap = false
 vim.opt.termguicolors = true
@@ -32,8 +34,6 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
 vim.opt.spelloptions:append("camel")
 vim.opt.spellcapcheck = "" -- disable checking for capital letters at the start of sentences
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
 vim.opt.signcolumn = "auto"
 vim.lsp.log.set_level 'error'
 vim.opt.completeopt = { "menuone", "noselect", "popup" }
