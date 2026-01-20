@@ -3,6 +3,7 @@ vim.g.maplocalleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.have_nerd_font = true
+vim.g.git_diffview_toggle = false
 vim.opt.tabstop = 4
 vim.opt.smarttab = true
 vim.opt.shiftwidth = 2
