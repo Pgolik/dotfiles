@@ -12,6 +12,7 @@ require('lsp/ruff')
 require('lsp/neocmakelsp')
 require('lsp/lua_ls')
 require('lsp/jsonls')
+require('lsp/markdown')
 
 
 vim.api.nvim_create_autocmd('LspAttach', {

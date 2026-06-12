@@ -11,13 +11,18 @@ end, {
 
 vim.api.nvim_create_user_command('DiffviewToggle', function()
   if not vim.g.git_diffview_toggle then
-    vim.cmd[[DiffviewOpen]]
+    vim.cmd [[DiffviewOpen]]
   else
-    vim.cmd[[DiffviewClose]]
+    vim.cmd [[DiffviewClose]]
   end
   vim.g.git_diffview_toggle = not vim.g.git_diffview_toggle
 end, {
   desc = 'Toggle Diffview',
 })
 
-
+vim.api.nvim_create_user_command('TGrep', function(args)
+  local live_grep = require('telescope.builtin').live_grep
+  live_grep({ cwd = args.args })
+end, {
+  desc = 'Telescope Grep', nargs = "*", complete = "dir"
+})

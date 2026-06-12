@@ -18,7 +18,6 @@ vim.lsp.config['vtsls'] = {
     },
     typescript = {
       format = {
-        placeOpenBraceOnNewLineForControlBlocks = true,
         semicolons = 'remove'
       },
       suggest = { completeFunctionCalls = true },
